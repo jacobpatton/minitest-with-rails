@@ -20,4 +20,8 @@ class UserTest < ActiveSupport::TestCase
     refute @user.valid?, 'Failure message.'
     assert_not_nil @user.errors[:email], 'no email validation errors found'
   end
+
+  test '#posts' do
+    assert_equal 2, @user.posts.size
+  end
 end
